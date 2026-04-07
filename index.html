@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Charm Store — украшения ручной работы</title>
+  <meta name="description" content="Charm Store — нежные украшения ручной работы. Каталог и конструктор своего уникального изделия"/>
+  <meta name="keywords" content="украшения, ручная работа, браслеты, ожерелья, брелки, бусины, жемчуг"/>
+  <link id="favicon" rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23F7C9D4'/%3E%3Cstop offset='1' stop-color='%23F5E9E2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='128' height='128' rx='20' fill='url(%23g)'/%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' dominant-baseline='middle' font-family='Arial' font-size='54' fill='%23333'%3ECS%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img id="avatar" class="avatar" alt="Аватар магазина"/>
+        <div>
+          <h1 class="brand-name">Charm Store <span class="sparkle">✨</span></h1>
+          <p class="brand-tag">украшения ручной работы • создавай своё 🎀</p>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="#about">О магазине</a>
+        <a href="#catalog">Каталог</a>
+        <a href="#builder">Создай своё</a>
+        <a href="https://instagram.com/charmstoreekz" target="_blank" rel="noopener" class="instagram-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          Instagram
+        </a>
+        <button id="setAvatarBtn" class="nav-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          Аватар
+        </button>
+        <input id="avatarFile" type="file" accept="image/*" hidden/>
+      </nav>
+      <button class="mobile-menu-btn" id="mobileMenuBtn"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about">О магазине</a>
+    <a href="#catalog">Каталог</a>
+    <a href="#builder">Создай своё</a>
+    <a href="https://instagram.com/charmstoreekz" target="_blank" rel="noopener">📸 Instagram</a>
+  </div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <div class="hero-badge">✨ Handmade with love</div>
+          <h2 class="hero-title">Нежные украшения + конструктор уникальных изделий</h2>
+          <p class="hero-description">Белые, розовые и бежевые оттенки, натуральные материалы и ручная работа. Соберите своё ожерелье, браслет или брелок — онлайн, как вживую.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#builder">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+              Создать своё
+            </a>
+            <a class="btn btn-outline" href="#catalog">Смотреть каталог</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat"><span class="stat-number">500+</span><span class="stat-label">Довольных клиентов</span></div>
+            <div class="stat"><span class="stat-number">100%</span><span class="stat-label">Ручная работа</span></div>
+            <div class="stat"><span class="stat-number">24ч</span><span class="stat-label">Быстрая сборка</span></div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-card">
+            <div id="heroImg" class="hero-img" role="img" aria-label="Пастельная композиция украшений">
+              <div class="floating-elements">
+                <div class="float-bead bead-1"></div>
+                <div class="float-bead bead-2"></div>
+                <div class="float-bead bead-3"></div>
+                <div class="float-bead bead-4"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-decoration"></div>
+        </div>
+      </div>
+      <div class="hero-wave"><svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z" fill="#ffffff"/></svg></div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-title-wrap"><span class="section-icon">🎀</span><h3 class="section-title">О нашем магазине</h3></div>
+          <button id="editAboutBtn" class="btn btn-ghost">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+            Редактировать
+          </button>
+        </div>
+        <div class="about-content">
+          <div id="aboutContent" class="about-text"></div>
+          <div class="about-features">
+            <div class="feature-card"><div class="feature-icon">💎</div><h4>Качественные материалы</h4><p>Натуральный жемчуг, керамика и фурнитура премиум-класса</p></div>
+            <div class="feature-card"><div class="feature-icon">🎨</div><h4>Уникальный дизайн</h4><p>Создайте своё изделие или выберите из каталога</p></div>
+            <div class="feature-card"><div class="feature-icon">🚀</div><h4>Быстрая доставка</h4><p>Отправка в течение 1-3 дней после подтверждения</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Catalog Section -->
+    <section class="section catalog-section" id="catalog">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-title-wrap"><span class="section-icon">✨</span><h3 class="section-title">Каталог</h3></div>
+          <button id="addProductBtn" class="btn btn-ghost">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            Добавить товар
+          </button>
+        </div>
+        <div class="filters-wrap">
+          <div class="filters" id="filters">
+            <button class="filter-btn active" data-filter="all"><span class="filter-icon">🌸</span>Все</button>
+            <button class="filter-btn" data-filter="bracelets"><span class="filter-icon">📿</span>Браслеты</button>
+            <button class="filter-btn" data-filter="necklaces"><span class="filter-icon">💫</span>Ожерелья</button>
+            <button class="filter-btn" data-filter="rings"><span class="filter-icon">💍</span>Кольца</button>
+            <button class="filter-btn" data-filter="earrings"><span class="filter-icon">✨</span>Серьги</button>
+            <button class="filter-btn" data-filter="chains"><span class="filter-icon">⛓️</span>Цепочки</button>
+            <button class="filter-btn" data-filter="keychains"><span class="filter-icon">🔑</span>Брелки</button>
+          </div>
+        </div>
+        <div id="productsGrid" class="products-grid"></div>
+        <div id="emptyState" class="empty-state">
+          <div class="empty-icon">🛍️</div>
+          <h4>Пока нет товаров</h4>
+          <p>Добавьте товары через кнопку выше или создайте своё уникальное изделие</p>
+          <a href="#builder" class="btn btn-primary">Создать своё</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Constructor Section -->
+    <section class="section constructor-section" id="builder">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-title-wrap"><span class="section-icon">💫</span><h3 class="section-title">Создай своё уникальное изделие</h3></div>
+          <p class="section-subtitle">Нажимайте на материалы — они появятся на превью. Можно менять порядок и удалять.</p>
+        </div>
+        <div class="constructor-wrap">
+          <!-- Left Panel -->
+          <div class="panel controls-panel">
+            <div class="panel-section">
+              <label class="panel-label"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>Тип изделия</label>
+              <div class="chips-row" id="typeRow">
+                <button class="chip" data-type="keychain"><span class="chip-icon">🔑</span>Брелок</button>
+                <button class="chip" data-type="bracelet"><span class="chip-icon">📿</span>Браслет</button>
+                <button class="chip" data-type="necklace"><span class="chip-icon">💫</span>Ожерелье</button>
+              </div>
+            </div>
+            <div class="panel-section">
+              <label class="panel-label"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="4" x2="10" y2="13"/><path d="M5 19h14"/></svg>Длина (см)</label>
+              <div class="chips-row" id="sizeRow">
+                <button class="chip" data-size="keychain:12">12</button>
+                <button class="chip" data-size="bracelet:16">16</button>
+                <button class="chip" data-size="bracelet:17">17</button>
+                <button class="chip" data-size="bracelet:19">19</button>
+                <button class="chip" data-size="necklace:40">40</button>
+                <button class="chip" data-size="necklace:45">45</button>
+                <button class="chip" data-size="necklace:50">50</button>
+              </div>
+            </div>
+            <div class="panel-section">
+              <label class="panel-label"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>Материалы</label>
+              <div id="beadsList" class="beads-list"></div>
+              <div class="materials-actions">
+                <button id="addCustomBead" class="btn btn-ghost btn-sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>Свой материал</button>
+                <button id="resetMaterials" class="btn btn-ghost btn-sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>Сбросить</button>
+              </div>
+              <p class="hint-text">Добавляйте свои варианты — они сохранятся в браузере.</p>
+            </div>
+          </div>
+          <!-- Right Panel -->
+          <div class="panel preview-panel">
+            <div class="viz-container">
+              <div class="viz-header">
+                <span class="viz-title"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Предпросмотр изделия</span>
+                <button id="clearDesign" class="btn btn-ghost btn-sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>Очистить</button>
+              </div>
+              <svg id="viz" class="visualizer" viewBox="0 0 600 300" aria-label="Визуализация изделия"></svg>
+              <div class="progress-bar"><div class="progress-fill" id="fillBar"></div></div>
+              <div class="progress-label"><span id="progressText">0% заполнено</span></div>
+            </div>
+            <div class="strand-container">
+              <label class="panel-label">Добавленные элементы</label>
+              <div id="strand" class="strand" aria-label="Нить с бусинами"></div>
+            </div>
+            <div class="totals-grid">
+              <div class="total-card"><span class="total-label">Тип</span><span class="total-value" id="t_type">—</span></div>
+              <div class="total-card"><span class="total-label">Длина</span><span class="total-value" id="t_length">—</span></div>
+              <div class="total-card"><span class="total-label">Бусин</span><span class="total-value" id="t_count">0</span></div>
+              <div class="total-card highlight"><span class="total-label">Стоимость</span><span class="total-value" id="t_price">0 ₸</span></div>
+            </div>
+            <div class="order-section">
+              <div class="comment-field">
+                <label class="panel-label" for="userNote"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Комментарий к заказу</label>
+                <input id="userNote" type="text" class="input-field" placeholder="Напр.: застёжка золото, размер 17 см"/>
+              </div>
+              <div class="order-actions">
+                <button id="addDesignToCart" class="btn btn-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>Сохранить дизайн</button>
+                <button id="orderWA" class="btn btn-primary btn-whatsapp"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Заказать в WhatsApp</button>
+              </div>
+            </div>
+            <p class="hint-text center">Подсказка: у элементов есть кнопки ◀ ▶ для перемещения и ✕ для удаления.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand"><span class="footer-logo">Charm Store ✨</span><p class="footer-tagline">Нежные украшения ручной работы</p></div>
+      <nav class="footer-nav">
+        <a href="#about">О магазине</a>
+        <a href="#catalog">Каталог</a>
+        <a href="#builder">Создай своё</a>
+        <a href="https://instagram.com/charmstoreekz" target="_blank" rel="noopener">Instagram</a>
+      </nav>
+      <div class="footer-copy"><span>© <span id="year"></span> Charm Store. Все права защищены.</span></div>
+    </div>
+  </footer>
+
+  <!-- Modals -->
+  <dialog id="aboutModal" class="modal">
+    <form id="aboutForm" method="dialog" class="modal-content">
+      <div class="modal-header"><h3>Редактировать «О магазине»</h3><button type="button" class="modal-close" onclick="document.getElementById('aboutModal').close()"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+      <div class="modal-body"><textarea id="aboutInput" rows="8" class="textarea-field" placeholder="Введите описание магазина..."></textarea></div>
+      <div class="modal-footer"><button type="button" class="btn btn-ghost" onclick="document.getElementById('aboutModal').close()">Отмена</button><button id="saveAbout" class="btn btn-primary">Сохранить</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="productModal" class="modal">
+    <form id="productForm" method="dialog" class="modal-content">
+      <div class="modal-header"><h3>Добавить товар</h3><button type="button" class="modal-close" onclick="document.getElementById('productModal').close()"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+      <div class="modal-body">
+        <div class="form-group"><label>Название товара</label><input type="text" id="productName" class="input-field" placeholder="Pearl Blossom" required/></div>
+        <div class="form-group"><label>Цена (₸)</label><input type="number" id="productPrice" class="input-field" placeholder="12000" required/></div>
+        <div class="form-group"><label>Категория</label><select id="productCategory" class="input-field"><option value="bracelets">Браслеты</option><option value="necklaces">Ожерелья</option><option value="rings">Кольца</option><option value="earrings">Серьги</option><option value="chains">Цепочки</option><option value="keychains">Брелки</option></select></div>
+        <div class="form-group"><label>Описание</label><input type="text" id="productDesc" class="input-field" placeholder="Натуральный жемчуг, фурнитура под золото."/></div>
+        <div class="form-group"><label>Изображение</label><input type="file" id="productImage" accept="image/*" class="input-field"/></div>
+      </div>
+      <div class="modal-footer"><button type="button" class="btn btn-ghost" onclick="document.getElementById('productModal').close()">Отмена</button><button id="saveProduct" class="btn btn-primary">Добавить</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="customBeadModal" class="modal">
+    <form id="customBeadForm" method="dialog" class="modal-content">
+      <div class="modal-header"><h3>Добавить свой материал</h3><button type="button" class="modal-close" onclick="document.getElementById('customBeadModal').close()"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+      <div class="modal-body">
+        <div class="form-group"><label>Название материала</label><input type="text" id="beadName" class="input-field" placeholder="Жемчуг розовый 6мм" required/></div>
+        <div class="form-row"><div class="form-group"><label>Цена (₸)</label><input type="number" id="beadPrice" class="input-field" placeholder="350" required/></div><div class="form-group"><label>Размер (мм)</label><input type="number" id="beadSize" class="input-field" placeholder="8" required/></div></div>
+        <div class="form-group"><label>Цвет</label><div class="color-picker-wrap"><input type="color" id="beadColor" value="#F7C9D4" class="color-picker"/><input type="text" id="beadColorHex" class="input-field" value="#F7C9D4" placeholder="#F7C9D4"/></div></div>
+      </div>
+      <div class="modal-footer"><button type="button" class="btn btn-ghost" onclick="document.getElementById('customBeadModal').close()">Отмена</button><button id="saveCustomBead" class="btn btn-primary">Добавить</button></div>
+    </form>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
